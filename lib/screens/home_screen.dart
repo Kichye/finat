@@ -1,7 +1,5 @@
-import 'dart:ui';
-
+import 'package:finat/resources/app_resources.dart';
 import 'package:finat/routes/app_routes.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,20 +17,22 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(22))),
           title: const Text('Finding A Tournament'),
-          centerTitle: false,
+          centerTitle: true,
           titleTextStyle: const TextStyle(
               fontSize: 15,
-              color: Colors.black,
+              color: Color.fromARGB(255, 255, 255, 255),
               fontWeight: FontWeight.bold,
               fontFamily: 'SFPRODISPLAY'),
-          backgroundColor: Colors.white,
-          elevation: 5,
+          backgroundColor: Color.fromARGB(255, 107, 219, 163),
+          elevation: 3,
         ),
         body: SafeArea(
           child: ListView(
             physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20),
             children: [
               const Padding(
                 padding: EdgeInsets.only(top: 25),
@@ -54,13 +54,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: const card1(),
               ),
-              const Text(
-                'Torneos',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    fontFamily: 'SFPRODISPLAY'),
+              const Padding(
+                padding: EdgeInsets.only(top: 25),
+                child: Text(
+                  'Torneos',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontFamily: 'SFPRODISPLAY'),
+                ),
               ),
               GestureDetector(
                 onTap: () {
@@ -101,10 +104,15 @@ class card1 extends StatelessWidget {
       child: (Card(
         clipBehavior: Clip.antiAlias,
         shadowColor: Colors.black,
-        elevation: 4,
+        elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         child: Container(
           decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('images/BalonB.png'),
+                alignment: Alignment.topRight,
+                scale: 4,
+                opacity: 40),
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 50, 107, 156),
@@ -114,23 +122,31 @@ class card1 extends StatelessWidget {
               end: Alignment.bottomLeft,
             ),
           ),
-          width: 190,
+          width: 200,
           height: 175,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                ' Checa tus servicios',
-                textAlign: TextAlign.left,
-                textWidthBasis: TextWidthBasis.parent,
-                maxLines: 3,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 25,
-                  color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                SizedBox(
+                  height: 120,
+                  width: 150,
+                  child: Text(
+                    'Gestiona tus Servicios',
+                    textAlign: TextAlign.left,
+                    textWidthBasis: TextWidthBasis.parent,
+                    maxLines: 3,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontFamily: 'SFPRODISPLAY',
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       )),
@@ -147,30 +163,48 @@ class card2 extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.antiAlias,
         shadowColor: Colors.black,
-        elevation: 4,
+        elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         child: Container(
           decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('images/trofB.png'),
+                alignment: Alignment.topRight,
+                scale: 4,
+                opacity: 50),
             gradient: LinearGradient(
-              colors: [Colors.yellowAccent, Colors.orange],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromARGB(255, 16, 200, 224),
+                Color.fromARGB(255, 114, 223, 120)
+              ],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
             ),
           ),
-          width: 300,
-          height: 200,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Revisa tus Torneos',
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 25,
-                    color: Colors.white),
-              ),
-            ],
+          width: 200,
+          height: 175,
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                SizedBox(
+                  height: 120,
+                  width: 150,
+                  child: Text(
+                    'Gestiona tus Torneos',
+                    textAlign: TextAlign.start,
+                    textWidthBasis: TextWidthBasis.parent,
+                    maxLines: 3,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        fontFamily: 'SFPRODISPLAY',
+                        color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
