@@ -1,6 +1,5 @@
 import 'package:finat/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:finat/models/glassmorphism.dart';
 
 class OptionsScreen extends StatefulWidget {
   const OptionsScreen({Key? key}) : super(key: key);
@@ -24,6 +23,8 @@ class _OptionsScreen extends State<OptionsScreen> {
           elevation: 0,
         ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
           currentIndex: home,
           onTap: (index) {
             setState(() {

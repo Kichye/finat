@@ -1,14 +1,14 @@
 import 'package:finat/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
-class ServicesScreen extends StatefulWidget {
-  const ServicesScreen({Key? key}) : super(key: key);
+class TorneoScreen extends StatefulWidget {
+  const TorneoScreen({Key? key}) : super(key: key);
 
   @override
-  State<ServicesScreen> createState() => _ServicesScreenState();
+  State<TorneoScreen> createState() => _TorneoScreen();
 }
 
-class _ServicesScreenState extends State<ServicesScreen> {
+class _TorneoScreen extends State<TorneoScreen> {
   int home = 1;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text('Servicios'),
+          title: const Text('Torneos'),
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
